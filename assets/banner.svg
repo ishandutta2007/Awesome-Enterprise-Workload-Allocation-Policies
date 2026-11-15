@@ -1,0 +1,207 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#080c14" />
+    </linearGradient>
+
+    <!-- Accent Gradients -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.85)" />
+    </linearGradient>
+
+    <linearGradient id="badgeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    
+    <linearGradient id="badgeGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+
+    <linearGradient id="badgeGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25" />
+    </pattern>
+  </defs>
+
+  <style>
+    .glow-orb-1 {
+      animation: floatOrb1 12s ease-in-out infinite alternate;
+    }
+    .glow-orb-2 {
+      animation: floatOrb2 15s ease-in-out infinite alternate;
+    }
+    .flow-line {
+      stroke-dasharray: 8 8;
+      animation: dashFlow 25s linear infinite;
+    }
+    .flow-line-reverse {
+      stroke-dasharray: 6 6;
+      animation: dashFlowRev 20s linear infinite;
+    }
+    .pulse-node {
+      animation: pulseNode 3s ease-in-out infinite alternate;
+    }
+    @keyframes floatOrb1 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(60px, 30px) scale(1.15); }
+    }
+    @keyframes floatOrb2 {
+      0% { transform: translate(0px, 0px) scale(1); }
+      100% { transform: translate(-50px, -20px) scale(1.1); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -1000; }
+    }
+    @keyframes dashFlowRev {
+      to { stroke-dashoffset: 1000; }
+    }
+    @keyframes pulseNode {
+      0% { r: 4px; opacity: 0.6; }
+      100% { r: 7px; opacity: 1; }
+    }
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .sub-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+    }
+  </style>
+
+  <!-- Deep Background -->
+  <rect width="1200" height="420" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" fill="url(#grid)" />
+
+  <!-- Dynamic Glowing Atmospheric Orbs (Background layer) -->
+  <g opacity="0.35">
+    <circle class="glow-orb-1" cx="200" cy="120" r="140" fill="#38bdf8" filter="url(#glow)" />
+    <circle class="glow-orb-2" cx="1000" cy="280" r="160" fill="#818cf8" filter="url(#glow)" />
+    <circle class="glow-orb-1" cx="600" cy="380" r="100" fill="#c084fc" filter="url(#glow)" />
+  </g>
+
+  <!-- Flowing Network Infrastructure Geometry (Behind Cards) -->
+  <g opacity="0.35">
+    <path class="flow-line" d="M 50 180 Q 300 60, 600 190 T 1150 160" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <path class="flow-line-reverse" d="M 50 240 Q 350 360, 650 230 T 1150 260" fill="none" stroke="#818cf8" stroke-width="1.5" />
+    <circle class="pulse-node" cx="300" cy="115" r="5" fill="#38bdf8" />
+    <circle class="pulse-node" cx="600" cy="190" r="6" fill="#818cf8" />
+    <circle class="pulse-node" cx="900" cy="180" r="5" fill="#c084fc" />
+    <circle class="pulse-node" cx="450" cy="275" r="5" fill="#34d399" />
+  </g>
+
+  <!-- Main Content Area: High Contrast, Guaranteed Foreground Visibility -->
+  
+  <!-- Top Tag Pill -->
+  <g transform="translate(460, 42)">
+    <rect width="280" height="30" rx="15" fill="rgba(30, 41, 59, 0.85)" stroke="#475569" stroke-width="1" />
+    <circle cx="18" cy="15" r="4" fill="#38bdf8" />
+    <text x="32" y="20" fill="#94a3b8" class="title-text" font-size="12" font-weight="600" letter-spacing="0.5">CURATED ECOSYSTEM GUIDE • 2026</text>
+  </g>
+
+  <!-- Main Title -->
+  <g transform="translate(600, 122)">
+    <!-- Subtle drop contrast backing to ensure zero bleed -->
+    <text text-anchor="middle" y="2" fill="#030712" class="title-text" font-size="37" font-weight="900" opacity="0.8">
+      Awesome Enterprise Workload Allocation Policies
+    </text>
+    <text text-anchor="middle" fill="url(#primaryGrad)" class="title-text" font-size="37" font-weight="900">
+      Awesome Enterprise Workload Allocation Policies
+    </text>
+  </g>
+
+  <!-- Subtitle -->
+  <g transform="translate(600, 164)">
+    <text text-anchor="middle" fill="#e2e8f0" class="sub-text" font-size="17" font-weight="500">
+      Curated Multi-Cloud Optimization, Autonomous Policy Engines &amp; FinOps Governance
+    </text>
+  </g>
+
+  <g transform="translate(600, 192)">
+    <text text-anchor="middle" fill="#94a3b8" class="sub-text" font-size="14">
+      Compare leading Enterprise SaaS &amp; Open-Source platforms for compute, container &amp; hybrid governance
+    </text>
+  </g>
+
+  <!-- Interactive / Architectural Feature Cards (Foreground) -->
+  <g transform="translate(130, 235)">
+    <!-- Card 1: Cloud & FinOps -->
+    <g transform="translate(0, 0)" filter="url(#cardShadow)">
+      <rect width="210" height="130" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+      <rect x="16" y="18" width="34" height="34" rx="8" fill="url(#badgeGrad1)" />
+      <text x="33" y="40" text-anchor="middle" fill="#ffffff" font-size="18">⚡</text>
+      <text x="60" y="35" fill="#f8fafc" class="title-text" font-size="14" font-weight="700">Cost &amp; FinOps</text>
+      <text x="60" y="48" fill="#38bdf8" class="sub-text" font-size="11" font-weight="600">Rightsizing &amp; Spot</text>
+      <text x="16" y="78" fill="#94a3b8" class="sub-text" font-size="11">Automated compute allocation</text>
+      <text x="16" y="95" fill="#94a3b8" class="sub-text" font-size="11">&amp; multi-cloud spend control.</text>
+      <text x="16" y="118" fill="#38bdf8" class="sub-text" font-size="10" font-weight="600">OpenCost • Spot • Kubecost →</text>
+    </g>
+
+    <!-- Card 2: Policy & Admission -->
+    <g transform="translate(240, 0)" filter="url(#cardShadow)">
+      <rect width="210" height="130" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+      <rect x="16" y="18" width="34" height="34" rx="8" fill="url(#badgeGrad2)" />
+      <text x="33" y="40" text-anchor="middle" fill="#ffffff" font-size="18">🛡️</text>
+      <text x="60" y="35" fill="#f8fafc" class="title-text" font-size="14" font-weight="700">Policy Engines</text>
+      <text x="60" y="48" fill="#818cf8" class="sub-text" font-size="11" font-weight="600">Guardrails &amp; OPA</text>
+      <text x="16" y="78" fill="#94a3b8" class="sub-text" font-size="11">Continuous policy auditing,</text>
+      <text x="16" y="95" fill="#94a3b8" class="sub-text" font-size="11">drift detection &amp; compliance.</text>
+      <text x="16" y="118" fill="#818cf8" class="sub-text" font-size="10" font-weight="600">OPA • Kyverno • Custodian →</text>
+    </g>
+
+    <!-- Card 3: Orchestration & Placement -->
+    <g transform="translate(480, 0)" filter="url(#cardShadow)">
+      <rect width="210" height="130" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+      <rect x="16" y="18" width="34" height="34" rx="8" fill="url(#badgeGrad3)" />
+      <text x="33" y="40" text-anchor="middle" fill="#ffffff" font-size="18">☸️</text>
+      <text x="60" y="35" fill="#f8fafc" class="title-text" font-size="14" font-weight="700">Orchestration</text>
+      <text x="60" y="48" fill="#34d399" class="sub-text" font-size="11" font-weight="600">Scheduling &amp; Jobs</text>
+      <text x="16" y="78" fill="#94a3b8" class="sub-text" font-size="11">Self-hosted workflow engines,</text>
+      <text x="16" y="95" fill="#94a3b8" class="sub-text" font-size="11">SLO-driven task placement.</text>
+      <text x="16" y="118" fill="#34d399" class="sub-text" font-size="10" font-weight="600">Kubernetes • Nomad • Dagu →</text>
+    </g>
+
+    <!-- Card 4: Infra Automation -->
+    <g transform="translate(720, 0)" filter="url(#cardShadow)">
+      <rect width="210" height="130" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+      <rect x="16" y="18" width="34" height="34" rx="8" fill="rgba(14, 165, 233, 0.25)" stroke="#38bdf8" stroke-width="1" />
+      <text x="33" y="40" text-anchor="middle" fill="#38bdf8" font-size="18">⚙️</text>
+      <text x="60" y="35" fill="#f8fafc" class="title-text" font-size="14" font-weight="700">IaC &amp; Auto</text>
+      <text x="60" y="48" fill="#38bdf8" class="sub-text" font-size="11" font-weight="600">Crossplane &amp; Ansible</text>
+      <text x="16" y="78" fill="#94a3b8" class="sub-text" font-size="11">Declarative state convergence</text>
+      <text x="16" y="95" fill="#94a3b8" class="sub-text" font-size="11">&amp; automated remediation.</text>
+      <text x="16" y="118" fill="#38bdf8" class="sub-text" font-size="10" font-weight="600">Terraform • Crossplane • Ansible →</text>
+    </g>
+  </g>
+
+  <!-- Subtle bottom accent line -->
+  <rect x="0" y="416" width="1200" height="4" fill="url(#primaryGrad)" />
+</svg>
